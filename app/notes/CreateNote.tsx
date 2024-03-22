@@ -15,6 +15,12 @@ export default function CreateNote() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
+            <textarea 
+                placeholder='Content'
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+            />
+            <button type="submit">Create Note</button>
         </form>
     )
 }
