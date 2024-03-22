@@ -1,12 +1,13 @@
-'use server'
+'use client'
 
 import { useState } from 'react';
+
 
 export default function CreateNote() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
-    const create = async () => {
+    async function create () {
         await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
             method: 'POST',
             headers: {
@@ -17,6 +18,8 @@ export default function CreateNote() {
                 content,
             }),
         });
+        setContent('');
+        setTitle('');
     }
 
     return (
