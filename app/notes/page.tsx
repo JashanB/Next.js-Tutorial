@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 async function getNotes() {
-    const res = await fetch(`http://127.0.0.1:8090/api/collections/notes/records`);
+    const res = await fetch(`http://127.0.0.1:8090/api/collections/notes/records`, {cache: 'no-store'});
     const data = await res.json();
     console.log(data)
     return data?.items as any[];
